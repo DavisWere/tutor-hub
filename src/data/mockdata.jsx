@@ -8,7 +8,7 @@ export const courses = [
     id: 1,
     title: "Beginner's Guide To Becoming A Professional Frontend Developer",
     type: "FRONTEND",
-    image: "https://images.pexels.com/photos/1586072/pexels-photo-1586072.jpeg",
+    image: "https://images.pexels.com/photos/3747441/pexels-photo-3747441.jpeg",
     students: 124,
     progress: "8/15"
   },
@@ -16,7 +16,7 @@ export const courses = [
     id: 2,
     title: "Beginner's Guide To Becoming A Professional Backend Developer",
     type: "BACKEND",
-    image: "https://images.pexels.com/photos/1586072/pexels-photo-1586072.jpeg",
+    image: "https://images.pexels.com/photos/3747441/pexels-photo-3747441.jpeg",
     students: 57,
     progress: "3/14"
   },
@@ -24,7 +24,7 @@ export const courses = [
     id: 3,
     title: "How To Create Your Online Course",
     type: "FRONTEND",
-    image: "https://images.pexels.com/photos/1586072/pexels-photo-1586072.jpeg",
+    image: "https://images.pexels.com/photos/3747441/pexels-photo-3747441.jpeg",
     students: 87,
     progress: "2/6"
   }
@@ -80,18 +80,18 @@ export const friends = [
     id: 1,
     name: "Andrew Meter",
     title: "Software Developer",
-    avatar: "https://images.pexels.com/photos/1586072/pexels-photo-1586072.jpeg" // Replace with free image URL
+    avatar: "https://images.pexels.com/photos/3747441/pexels-photo-3747441.jpeg" // Replace with free image URL
   },
   {
     id: 2,
     name: "Jeff Linkoin",
     title: "Product Owner",
-    avatar: "https://images.pexels.com/photos/1531945/pexels-photo-1531945.jpeg" // Replace with free image URL
+    avatar: "https://images.pexels.com/photos/3747441/pexels-photo-3747441.jpeg" // Replace with free image URL
   },
   {
     id: 3,
     name: "Sasha Melstone",
     title: "HR Manager",
-    avatar: "https://images.pexels.com/photos/1704120/pexels-photo-1704120.jpeg" // Replace with free image URL
+    avatar: "https://images.pexels.com/photos/3747441/pexels-photo-3747441.jpeg" // Replace with free image URL
   }
 ];
