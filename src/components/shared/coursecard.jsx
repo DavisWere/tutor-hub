@@ -24,7 +24,7 @@ const CourseCard = ({ course }) => {
             {[1, 2, 3].map((i) => (
               <img
                 key={i}
-                src="/api/placeholder/24/24"
+                src="https://images.pexels.com/photos/1586072/pexels-photo-1586072.jpeg"
                 alt="Student"
                 className="w-6 h-6 rounded-full border-2 border-white"
               />
@@ -37,5 +37,5 @@ const CourseCard = ({ course }) => {
   );
 };
 
-
+export default CourseCard
 

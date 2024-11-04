@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Sidebar from '@/components/layout/Sidebar';
+import MobileMenu from '@/components/layout/MobileMenu';
+import ProfileSection from '@/components/layout/ProfileSection';
+import MentorTable from '@/components/dashboard/MentorTable';
+import Banner from '@/components/dashboard/Banner';
+import CourseGrid from '@/components/dashboard/CourseGrid';
+import ProgressSection from '@/components/dashboard/ProgressSection';
+import SearchBar from '@/components/dashboard/SearchBar';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="flex">
+      <Sidebar />
+      <main className="flex-1 ml-60 p-8 bg-gray-50">
+        <SearchBar />
+        <Banner />
+        <ProgressSection />
+        <h2 className="text-xl font-medium mb-4">Continue Watching</h2>
+        <CourseGrid />
+        <h2 className="text-xl font-medium mb-4">Your Mentor</h2>
+        <MentorTable />
+      </main>
+      <ProfileSection />
+      <MobileMenu />
+    </div>
+  );
+};
 
-export default App
+export default App;
+
+

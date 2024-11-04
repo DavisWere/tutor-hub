@@ -1,8 +1,15 @@
 // src/components/Layout/ProfileSection.jsx
-import { mentors } from '../../data/mockData';
-import { MentorItem } from '../shared/MentorItem';
+import { mentors } from '../../data/MockData';
+import MentorItem from '@/components/shared/MentorItem';
+import { Bell, Mail, Settings } from 'lucide-react'; // Import specific icons
 
 const ProfileSection = () => {
+  const iconMap = {
+    Bell,
+    Mail,
+    Settings,
+  };
+
   return (
     <aside className="w-72 fixed right-0 top-0 h-screen bg-white border-l border-gray-200 p-8 overflow-y-auto hidden xl:block">
       <div className="text-center mb-8">
@@ -18,14 +25,17 @@ const ProfileSection = () => {
       </div>
 
       <div className="flex justify-center gap-4 mb-8">
-        {['Bell', 'Mail', 'Settings'].map((icon) => (
-          <button
-            key={icon}
-            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center"
-          >
-            <Icon name={icon} size={20} />
-          </button>
-        ))}
+        {['Bell', 'Mail', 'Settings'].map((icon) => {
+          const IconComponent = iconMap[icon];
+          return (
+            <button
+              key={icon}
+              className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center"
+            >
+              {IconComponent && <IconComponent size={20} />}
+            </button>
+          );
+        })}
       </div>
 
       <div className="h-48 mb-8">
@@ -53,6 +63,5 @@ const ProfileSection = () => {
   );
 };
 
-export { Sidebar, MobileMenu, ProfileSection };
-
+export default ProfileSection
 

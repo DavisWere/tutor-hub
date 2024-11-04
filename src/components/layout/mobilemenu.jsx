@@ -1,5 +1,16 @@
 // src/components/Layout/MobileMenu.jsx
+import React from 'react';
+import { Home, Book, BarChart2, User } from 'lucide-react'; // Import specific icons
+
 const MobileMenu = () => {
+  // Map icon names to components
+  const iconMap = {
+    Home,
+    Book,
+    BarChart2,
+    User,
+  };
+
   const menuItems = [
     { icon: 'Home', label: 'Home' },
     { icon: 'Book', label: 'Courses' },
@@ -16,7 +27,8 @@ const MobileMenu = () => {
             href="#"
             className="flex flex-col items-center gap-1 text-gray-600"
           >
-            <Icon name={item.icon} size={20} />
+            {/* Use iconMap to render the correct icon component */}
+            {iconMap[item.icon] && React.createElement(iconMap[item.icon], { size: 20 })}
             <span className="text-xs">{item.label}</span>
           </a>
         ))}
@@ -25,3 +37,4 @@ const MobileMenu = () => {
   );
 };
 
+export default MobileMenu;

@@ -12,3 +12,5 @@ const ProgressCard = ({ icon, title, progress }) => {
     </div>
   );
 };
+
+export default ProgressCard

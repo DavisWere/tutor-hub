@@ -1,4 +1,5 @@
-// src/components/shared/MentorItem.jsx
+import { useState } from 'react';
+
 const MentorItem = ({ mentor }) => {
   const [isFollowing, setIsFollowing] = useState(false);
 
@@ -23,6 +24,4 @@ const MentorItem = ({ mentor }) => {
   );
 };
 
-export { CourseCard, ProgressCard, MentorItem };
-
-
+export default MentorItem;
