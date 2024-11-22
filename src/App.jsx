@@ -10,6 +10,7 @@ import ProgressSection from '@/components/dashboard/ProgressSection';
 import SearchBar from '@/components/dashboard/SearchBar';
 import LoginPage from '@/components/auth/LoginPage';
 import HomePage from '@/components/HomePage';
+import CoursePage from './components/dashboard/CoursePage';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -29,6 +30,7 @@ const App = () => {
         {isAuthenticated ? (
           <>
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard/courses" element={<CoursePage />} />
             {/* Additional authenticated routes can go here */}
           </>
         ) : (
@@ -50,12 +52,13 @@ const Dashboard = () => {
         <ProgressSection />
         <h2 className="text-xl font-medium mb-4">Continue Watching</h2>
         <CourseGrid />
-        <h2 className="text-xl font-medium mb-4">Your Mentor</h2>
+        <h2 className="text-xl font-medium mb-4">     </h2>
         <MentorTable />
+      <ProfileSection />
+
       </main>
 
       {/* Profile Section and Mobile Menu will be shown on the dashboard */}
-      <ProfileSection />
       <MobileMenu />
     </div>
   );

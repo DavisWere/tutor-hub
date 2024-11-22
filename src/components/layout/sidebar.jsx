@@ -14,18 +14,16 @@ const Sidebar = () => {
   };
 
   const navItems = [
-    { icon: 'PieChart', label: 'Dashboard', active: true },
-    { icon: 'Inbox', label: 'Inbox' },
-    { icon: 'Book', label: 'Lesson' },
-    { icon: 'CheckSquare', label: 'Task' },
-    { icon: 'Users', label: 'Group' },
+    { icon: 'PieChart', label: 'Dashboard', active: true, path:'#' },
+    { icon: 'Book', label: 'Lesson', path : "#" },
+    { icon: 'CheckSquare', label: 'Courses', path: "/dashboard/courses" },
   ];
 
   return (
     <aside className="w-60 fixed h-screen bg-white border-r border-gray-200 p-8">
       <div className="flex items-center gap-2 text-xl font-bold text-purple-600 mb-8">
         {iconMap['GraduationCap'] && <GraduationCap />}
-        Coursue
+        Tusome
       </div>
 
       <nav className="mb-8">
@@ -35,7 +33,7 @@ const Sidebar = () => {
           return (
             <a
               key={item.label}
-              href="#"
+              href={item?.path}
               className={`flex items-center gap-3 p-3 rounded-lg mb-1 ${
                 item.active
                   ? 'bg-purple-600 text-white'
