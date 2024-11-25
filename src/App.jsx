@@ -10,6 +10,8 @@ import ProgressSection from '@/components/dashboard/ProgressSection';
 import SearchBar from '@/components/dashboard/SearchBar';
 import LoginPage from '@/components/auth/LoginPage';
 import CoursePage from './components/dashboard/CoursePage';
+import UnitPage from "@/components/dashboard/UnitPage"
+import TutorPage from './components/dashboard/TutorPage';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -30,6 +32,8 @@ const App = () => {
           <>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/dashboard/courses" element={<CoursePage />} />
+            <Route path="/dashboard/units" element={<UnitPage />} />
+            <Route path="/dashboard/tutors" element={<TutorPage />} />
             {/* Additional authenticated routes can go here */}
           </>
         ) : (
