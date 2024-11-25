@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import CourseGrid from "./CourseGrid"
 import axios from "axios";
 import BASE_URL from "../../api/consants";
+import Dashboard from "../layout/TheDashboardView";
 
 const CoursePage = ()=>{
     const getUsers = async () => {
@@ -26,7 +27,9 @@ const CoursePage = ()=>{
 
     return <>
         <div className="p-4">
-            <CourseGrid/>
+            <Dashboard>
+              <CourseGrid/>
+            </Dashboard>
         </div>
     </>
 }

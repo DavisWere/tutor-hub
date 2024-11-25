@@ -12,6 +12,7 @@ import LoginPage from '@/components/auth/LoginPage';
 import CoursePage from './components/dashboard/CoursePage';
 import UnitPage from "@/components/dashboard/UnitPage"
 import TutorPage from './components/dashboard/TutorPage';
+import HomePage from './components/Homepage';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -30,7 +31,7 @@ const App = () => {
         {/* Redirect to Dashboard if user is authenticated */}
         {isAuthenticated ? (
           <>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={<HomePage />} />
             <Route path="/dashboard/courses" element={<CoursePage />} />
             <Route path="/dashboard/units" element={<UnitPage />} />
             <Route path="/dashboard/tutors" element={<TutorPage />} />

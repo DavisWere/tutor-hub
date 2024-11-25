@@ -14,13 +14,14 @@ const Sidebar = () => {
   };
 
   const navItems = [
-    { icon: 'PieChart', label: 'Dashboard', active: true, path:'#' },
-    { icon: 'Book', label: 'Lesson', path : "#" },
+    { icon: 'PieChart', label: 'Dashboard', active: true, path:'/dashboard' },
+    { icon: 'Book', label: 'Units', path : "/dashboard/units" },
     { icon: 'CheckSquare', label: 'Courses', path: "/dashboard/courses" },
+    { icon: 'CheckSquare', label: 'Tutors', path: "/dashboard/tutors" },
   ];
 
   return (
-    <aside className="w-60 fixed h-screen bg-white border-r border-gray-200 p-8">
+    <div className="w-60 fixed h-screen bg-white border-r border-gray-200 p-8">
       <div className="flex items-center gap-2 text-xl font-bold text-purple-600 mb-8">
         {iconMap['GraduationCap'] && <GraduationCap />}
         Tusome
@@ -46,20 +47,7 @@ const Sidebar = () => {
           );
         })}
       </nav>
-
-      <div>
-        <div className="text-xs text-gray-600 uppercase mb-4">Friends</div>
-        {friends.map((friend) => (
-          <div key={friend.id} className="flex items-center gap-3 p-2 rounded-lg">
-            <img src={friend.avatar} alt={friend.name} className="w-8 h-8 rounded-full" />
-            <div>
-              <div className="text-sm font-medium">{friend.name}</div>
-              <div className="text-xs text-gray-600">{friend.title}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </aside>
+    </div>
   );
 };
 
