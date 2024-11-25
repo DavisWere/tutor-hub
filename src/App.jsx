@@ -9,7 +9,6 @@ import CourseGrid from '@/components/dashboard/CourseGrid';
 import ProgressSection from '@/components/dashboard/ProgressSection';
 import SearchBar from '@/components/dashboard/SearchBar';
 import LoginPage from '@/components/auth/LoginPage';
-import HomePage from '@/components/HomePage';
 import CoursePage from './components/dashboard/CoursePage';
 
 const App = () => {

@@ -1,7 +1,6 @@
 // src/components/Dashboard/ProgressSection.jsx
-import { courses } from '../../data/MockData';
-import ProgressCard from '../shared/progresscard';
 import { Code, Box, Briefcase } from 'lucide-react'; // Import specific icons
+import ProgressCard from '../shared/ProgressCard';
 
 const ProgressSection = () => {
   return (
