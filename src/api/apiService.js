@@ -1,11 +1,9 @@
-// src/api/apiService.js
-
-// src/api/apiService.js
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL; // for Vite
+const API_BASE_URL = "https://tutor-hub-api-production.up.railway.app";
 
 export const apiService = {
   login: async (username, password) => {
     try {
+      console.log(API_BASE_URL, "fhfjfngkgn")
       const response = await fetch(`${API_BASE_URL}/api/token/request/`, {
         method: 'POST',
         headers: {

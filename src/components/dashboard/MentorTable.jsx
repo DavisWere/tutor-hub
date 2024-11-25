@@ -3,7 +3,7 @@ import axios from 'axios';
 import { MoreVertical } from 'lucide-react';
 
 const MentorTable = () => {
-  const [units, setUnits] = useState([]);
+  const [units, setUnits] = useState(['']);
 
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -39,7 +39,7 @@ const MentorTable = () => {
         </tr>
       </thead>
       <tbody>
-        {units.map((unit) => (
+        {units?.map((unit) => (
           <tr key={unit.id}>
             <td className="px-4 py-3">
               <div className="flex items-center gap-3">

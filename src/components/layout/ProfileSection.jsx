@@ -3,6 +3,7 @@ import { mentors } from '../../data/MockData';
 import MentorItem from '@/components/shared/MentorItem';
 import { Bell, Edit } from 'lucide-react'; // Import specific icons
 import axios from 'axios';
+import BASE_URL from '../../api/consants';
 
 const ProfileSection = () => {
   const iconMap = {
@@ -10,7 +11,7 @@ const ProfileSection = () => {
     Edit,
   };
 
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const API_BASE_URL = BASE_URL;
 
   // Initial dummy user data
   const dummyUser = {

@@ -1,5 +1,5 @@
 // src/components/Dashboard/CourseGrid.jsx
-import { courses } from '@/data/MockData';
+// import { courses } from '@/data/MockData';
 import CourseCard from '@/components/shared/CourseCard';
 import { useEffect, useState } from 'react';
 
@@ -7,10 +7,13 @@ import { useEffect, useState } from 'react';
 const CourseGrid = () => {
 
     const [profile, setProfile] = useState('');
+    const [user, setUser] = useState('');
+    const courses = ['co']
 
     useEffect(() => {
     // Check if user data exists in localStorage and set user state accordingly
     const storedUser = localStorage.getItem('authData');
+    console.log(localStorage.getItem('authData'), "auth")
 
     if (storedUser) {
       try {
