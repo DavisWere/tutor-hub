@@ -27,10 +27,10 @@ const ProfileSection = () => {
 
   const getProfile = async () => {
     const storedUser = JSON.parse(localStorage.getItem('authData'));
-    console.log(storedUser?.access);
+    console.log(storedUser?.user);
 
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/users/${user?.id}`, {
+      const response = await axios.get(`${API_BASE_URL}/api/users/${storedUser?.user?.id}`, {
         headers: {
           Authorization: `Bearer ${storedUser?.access}`,
         },
@@ -45,6 +45,7 @@ const ProfileSection = () => {
   useEffect(() => {
     // Check if user data exists in localStorage and set user state accordingly
     const storedUser = localStorage.getItem('authData');
+    getProfile()
 
     if (storedUser) {
       try {
@@ -90,7 +91,7 @@ const ProfileSection = () => {
 
       {/* Expanded Profile Info */}
       <div className="mb-4">
-        <button onClick={getProfile} className="px-4 py-2 bg-blue-400 rounded text-white">
+        <button onClick={getProfile} className="px-4 py-2 bg-blue-400 rounded text-white hidden">
           Expand Profile
         </button>
         {profile && (

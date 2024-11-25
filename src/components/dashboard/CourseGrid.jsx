@@ -2,6 +2,7 @@
 // import { courses } from '@/data/MockData';
 import CourseCard from '@/components/shared/CourseCard';
 import { useEffect, useState } from 'react';
+import BASE_URL from '../../api/consants';
 
 
 const CourseGrid = () => {
@@ -18,9 +19,7 @@ const CourseGrid = () => {
     if (storedUser) {
       try {
         const parsedUser = JSON.parse(storedUser);
-        console.log(parsedUser?.user);
-
-        setUser(parsedUser?.user); // Set the user from localStorage data
+        axios.get(`${BASE_URL}/courses`)
       } catch (error) {
         console.error('Error parsing user data from localStorage:', error);
       }
