@@ -6,10 +6,12 @@ import ProfileSection from '@/components/layout/ProfileSection';
 import MentorTable from '@/components/dashboard/MentorTable';
 import Banner from '@/components/dashboard/Banner';
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 
 const Dashboard = ({children}) => {
     const navigate = useNavigate(); 
+    const location = useLocation();
 
     const [showProfile, setShowProfile] = useState(false);
     const [showSider, setSider] = useState(true);
@@ -67,7 +69,6 @@ const Dashboard = ({children}) => {
             </div>
             
   
-          <Banner />
           {children}
           {/* <MentorTable /> */}
           {showProfile && <ProfileSection />}

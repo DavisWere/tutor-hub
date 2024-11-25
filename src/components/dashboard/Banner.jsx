@@ -5,7 +5,7 @@ const Banner = () => {
   return (
     <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl p-8 text-white mb-8">
       <h2 className="text-2xl font-medium mb-4">
-        Sharpen Your Skills With Professional Online Courses
+        System Overview
       </h2>
       <a href="#" className="inline-flex items-center gap-2 bg-black py-2 px-4 rounded-full text-sm font-medium">
         Join Now
