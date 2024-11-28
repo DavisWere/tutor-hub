@@ -39,8 +39,8 @@ const UnitPage = ()=>{
                     <thead>
                     <tr>
                         <th className="px-4 py-3 text-left">Instructor Name</th>
-                        <th className="px-4 py-3 text-left">Day</th>
                         <th className="px-4 py-3 text-left">Rate</th>
+                        <th className="px-4 py-3 text-left">Day</th>
                         <th className="px-4 py-3 text-left">Actions</th>
                     </tr>
                     </thead>
