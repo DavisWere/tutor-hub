@@ -2,10 +2,35 @@ import {useEffect, useState} from "react"
 import axios from "axios";
 import BASE_URL from "../api/consants.js";
 import Dashboard from "../components/layout/TheDashboardView.jsx";
-import {MoreVertical} from "lucide-react";
+import {ArrowBigRight, MoreVertical, PlusIcon} from "lucide-react";
 
 const UnitPage = ()=>{
     const [units, setUnits] = useState(['']);
+
+    const bookUnit = async (unitId) => {
+        const storedUser = JSON.parse(localStorage.getItem('authData'));
+
+        let today = new Date();
+        let formattedDate = today.toISOString();
+
+        let payload = {
+            student: storedUser?.user?.id,
+            unit: [unitId],
+            requested_date: formattedDate,
+        }
+
+
+        try {
+            const response = await axios.post(`${BASE_URL}/api/session/booking/`, payload, {
+                headers: {
+                    Authorization: `Bearer ${storedUser?.access}`,
+                },
+            });
+
+        } catch (error) {
+            console.error('Error booking Unit:', error);
+        }
+    }
 
     const getUnits = async () => {
         const storedUser = JSON.parse(localStorage.getItem('authData'));
@@ -21,7 +46,7 @@ const UnitPage = ()=>{
         } catch (error) {
           console.error('Error fetching profile:', error);
         }
-      };
+    };
     
 
     useEffect(() => {
@@ -62,8 +87,13 @@ const UnitPage = ()=>{
                             </td>
                             <td className="px-4 py-3">{unit?.unit_name}</td>
                             <td className="px-4 py-3">
-                                <div className={'cursor-pointer p-2 hover:border flex items-center justify-center'}>
-                                    <MoreVertical size={18} className="text-gray-500"/>
+                                <div className={'flex items-center justify-center'}>
+                                    {/*<MoreVertical size={18} className="text-gray-500"/>*/}
+                                    <button
+                                        onClick={() => bookUnit(unit.id)}
+                                        className={' border text-purple-600 text-sm hover:bg-purple-200 hover:p-3 border-purple-600 w-fit p-2 flex items-center gap-2 my-2'}>
+                                        Book <ArrowBigRight/>
+                                    </button>
                                 </div>
 
                             </td>
