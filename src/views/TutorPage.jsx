@@ -1,14 +1,15 @@
 import { useEffect } from "react"
-import CourseGrid from "./CourseGrid"
+import CourseGrid from "../components/dashboard/CourseGrid.jsx"
 import axios from "axios";
-import BASE_URL from "../../api/consants";
+import BASE_URL from "../api/consants.js";
+import Dashboard from "../components/layout/TheDashboardView.jsx";
 
-const AssignmentPage = ()=>{
+const TutorPage = ()=>{
     const getUsers = async () => {
         const storedUser = JSON.parse(localStorage.getItem('authData'));
     
         try {
-          const response = await axios.get(`${BASE_URL}/api/units/`, {
+          const response = await axios.get(`${BASE_URL}/api/tutor/availability/`, {
             headers: {
               Authorization: `Bearer ${storedUser?.access}`,
             },
@@ -26,9 +27,12 @@ const AssignmentPage = ()=>{
 
     return <>
         <div className="p-4">
-            <CourseGrid/>
+            <Dashboard>
+               Tutors
+            </Dashboard>
+            
         </div>
     </>
 }
 
-export default CoursePage
+export default TutorPage

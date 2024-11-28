@@ -1,10 +1,9 @@
 import { useEffect } from "react"
-import CourseGrid from "./CourseGrid"
+import CourseGrid from "../components/dashboard/CourseGrid.jsx"
 import axios from "axios";
-import BASE_URL from "../../api/consants";
-import Dashboard from "../layout/TheDashboardView";
+import BASE_URL from "../api/consants.js";
 
-const UnitPage = ()=>{
+const AssignmentPage = ()=>{
     const getUsers = async () => {
         const storedUser = JSON.parse(localStorage.getItem('authData'));
     
@@ -27,11 +26,9 @@ const UnitPage = ()=>{
 
     return <>
         <div className="p-4">
-            <Dashboard>
-                Units
-            </Dashboard>
+            <CourseGrid/>
         </div>
     </>
 }
 
-export default UnitPage
+export default CoursePage
